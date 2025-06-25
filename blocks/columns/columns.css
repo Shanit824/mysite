@@ -19,6 +19,11 @@
   display: block;
 }
 
+.columns.text-position > div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
@@ -30,4 +35,13 @@
     flex: 1;
     order: unset;
   }
+
+ .columns.text-position > div { 
+    flex-direction: row; 
+ }
+
+  .columns.text-position > div { 
+    color: white;
+ }
+
 }
