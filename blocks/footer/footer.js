@@ -7,8 +7,9 @@ import { loadFragment } from '../fragment/fragment.js';
  */
 export default async function decorate(block) {
   // load footer as fragment
+  const lang = document.documentElement.lang || 'en';
   const footerMeta = getMetadata('footer');
-  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
+  const footerPath = footerMeta || `/${lang}/footer`;
   const fragment = await loadFragment(footerPath);
 
   // decorate footer DOM

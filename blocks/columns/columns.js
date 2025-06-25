@@ -1,4 +1,10 @@
-export default function decorate(block) {
+import { getConfigValue } from '../../scripts/configs.js';
+
+export default async function decorate(block) {
+  const config = await getConfigValue('get-config-value');
+  if (config) {
+    block.classList.add('added-class-via-config-feature');
+  }
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
